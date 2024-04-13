@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Void Federation</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .wrapper {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .wrapper > .block > canvas {
+            background: rgb(255 0 0 / 50%); 
+            width: clamp(100px, 30vw, 300px);
+            border: 1px solid rgb(255 127 127);
+            margin: 2px;
+        }
+        .wrapper > .block > #canvas3 {
+            background: rgb(255, 255, 255);
+        }
+    </style>
+</head>
+<body>
+    <button style="background-color: rgb(255, 147, 147)" class="logout">Log out</button>
+    <p class="last-updated">---</p>
+    <div class="wrapper">
+        <div class="block">
+            <p>Need:</p>
+            <canvas id="canvas1" width="101" height="101"></canvas>
+        </div>
+        <div class="block">
+            <p>Completed:</p>
+            <canvas id="canvas2" width="101" height="101"></canvas>
+        </div>
+        <div class="block">
+            <p>Mask:</p>
+            <canvas id="canvas3" width="101" height="101"></canvas>
+        </div>
+    </div>
+
+    <h1>Status: <span>0/0</span></h1>
+    <h2>Now (last copied): <span>----</span></h2>
+
+    <button class="copy" onclick="copy()" style="font-size: 22px; padding: 10px 14px;">Copy next</button>
+
+    <script src="index-black.js"></script>
+    <script>
+        document.querySelector("button.logout").addEventListener("click", () => {
+            location.href = "login.html"; // Redirect to the login page
+        })
+    </script>
+</body>
+</html>
